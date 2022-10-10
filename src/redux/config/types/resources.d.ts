@@ -37,3 +37,29 @@ export type IProduct = {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export type ISale = {
+  id: number;
+  date: Date;
+  amount: number;
+  products: ProductsOnSale[];
+  paymentMethod: PaymentMethod
+  paymentMethodId: number;
+}
+
+export type ProductsOnSale = {
+  id: number;
+  product: IProduct;
+  productId: number;
+  sale: ISale;
+  saleId: number;
+  assignedAt: Date;
+}
+
+export type PaymentMethod = {
+  id: number;
+  name: string;
+  sales: ISale[];
+  createdAt: Date;
+  updatedAt: Date;
+}
