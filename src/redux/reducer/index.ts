@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import InitialState from './types';
+import { InitialState } from '../config/types/reducer'
 
 const initialState: InitialState = {
   counter: 0,
