@@ -1,5 +1,5 @@
 import { GetAllProductsResponse } from "../axiosResponses/product";
-import { ActionNames } from "../../../actions/names"
+import { ActionNames } from "../names"
 
 export type GetAllProductsAction = {
   type: ActionNames.GET_ALL_PRODUCTS;
