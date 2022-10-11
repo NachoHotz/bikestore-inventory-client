@@ -1,23 +1,41 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ProductState } from '../config/types/reducer/'
-import { IProduct } from '../config/types/resources'
+import { createSlice } from '@reduxjs/toolkit'
+import { ProductState } from '../../config/redux/types/reducer/'
+import { fetchAllProducts } from '../actions/products'
 
 const productState: ProductState = {
   allProducts: [],
-  isLoading: false,
-  isUpdating: false
+  isLoading: 'idle',
+  isUpdating: false,
+  error: {}
 }
 
 const productReducer = createSlice({
   name: 'product',
   initialState: productState,
   reducers: {
-    getAllProducts(state, action: PayloadAction<IProduct>) {
-      state.allProducts.push(action.payload)
+    setLoadingIdle: (state, _action) => {
+      state.isLoading = 'idle'
     }
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchAllProducts.pending, (state, _action) => {
+      state.isLoading = 'pending';
+    })
+
+    builder.addCase(fetchAllProducts.fulfilled, (state, action) => {
+      state.isLoading = 'succeded';
+      state.allProducts = action.payload
+    })
+    builder.addCase(fetchAllProducts.rejected, (state, action) => {
+      state.isLoading = 'error';
+
+      if (action.payload) {
+        state.error = action.payload
+      }
+
+      state.error = action.error
+    })
   }
 })
-
-export const { getAllProducts } = productReducer.actions;
 
 export default productReducer.reducer
