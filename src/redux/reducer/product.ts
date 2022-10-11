@@ -5,7 +5,7 @@ import { fetchAllProducts } from '../actions/products'
 const productState: ProductState = {
   allProducts: [],
   isLoading: 'idle',
-  isUpdating: false,
+  isUpdating: 'idle',
   error: {}
 }
 
