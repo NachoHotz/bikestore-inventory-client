@@ -33,7 +33,7 @@ export type IProduct = {
   categoryId: number;
   provider: IProvider;
   providerId: number;
-  sale: string;
+  sale: ISale;
   createdAt: Date;
   updatedAt: Date;
 }
