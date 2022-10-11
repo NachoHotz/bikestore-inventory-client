@@ -1,26 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { InitialState } from '../config/types/reducer'
+import { combineReducers } from '@reduxjs/toolkit'
+import productReducer from './product'
 
-const initialState: InitialState = {
-  counter: 0,
-};
-
-export const counterSlice = createSlice({
-  name: 'counter',
-  initialState,
-  reducers: {
-    increment: state => {
-      state.counter += 1;
-    },
-    decrement: state => {
-      state.counter -= 1;
-    },
-    reset: state => {
-      state.counter = 0;
-    }
-  }
+const reducer = combineReducers({
+  product: productReducer,
 })
 
-export const { increment, decrement, reset } = counterSlice.actions;
-
-export default counterSlice.reducer
+export default reducer;

@@ -1,7 +1,7 @@
 import { GetAllProductsResponse } from "../axiosResponses/product";
-import { ActionNames } from "../names"
+import { ProductActionNames } from "../names/product";
 
 export type GetAllProductsAction = {
-  type: ActionNames.GET_ALL_PRODUCTS;
+  type: ProductActionNames.GET_ALL_PRODUCTS,
   payload: GetAllProductsResponse
 }
