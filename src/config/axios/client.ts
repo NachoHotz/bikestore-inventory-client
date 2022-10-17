@@ -1,9 +1,9 @@
 // Axios instance for public use
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
-import { SERVER_URLS, REFRESH_TOKENS } from './endpoints'
+import { SERVER_URLS, REFRESH_TOKENS } from './endpoints';
 
 async function refreshTokens() {
-  await Client.post(REFRESH_TOKENS)
+  await Client.post(REFRESH_TOKENS);
 }
 
 export const Client = axios.create({

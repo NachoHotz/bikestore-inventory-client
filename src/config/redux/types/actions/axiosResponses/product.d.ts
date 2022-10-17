@@ -1,4 +1,4 @@
-import { IProduct } from "../../resources";
+import { IProduct } from '../../resources';
 
 export type GetAllProductsResponse = {
   status: number;
