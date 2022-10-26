@@ -1,4 +1,4 @@
-// Axios instance for public use
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 import { SERVER_URLS, REFRESH_TOKENS } from './endpoints';
 

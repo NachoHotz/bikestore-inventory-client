@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createSlice } from '@reduxjs/toolkit';
 import { ProductState } from '../../config/redux/types/reducer/';
-import { fetchAllProducts } from '../actions/products';
+import { fetchAllProducts, fetchProductDetails } from '../actions/products';
 
 const productState: ProductState = {
   allProducts: [],
@@ -34,6 +35,13 @@ const productReducer = createSlice({
       }
 
       state.error = action.error;
+    });
+    builder.addCase(fetchProductDetails.pending, (state, _action) => {
+      state.isLoading = 'pending';
+    });
+
+    builder.addCase(fetchProductDetails.fulfilled, (state, action) => {
+      state.isLoading = 'succeded';
     });
   }
 });

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 type PageProps = {
   to: string;
@@ -11,5 +11,5 @@ export default function PageLink({ to, name }: PageProps) {
       <button>{name}</button>
       <span className="font-bold text-lg">{name}</span>
     </Link>
-  )
+  );
 }
