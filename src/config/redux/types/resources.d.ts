@@ -47,7 +47,7 @@ export type ISale = {
   paymentMethodId: number;
 }
 
-export type ProductsOnSale = {
+export type IProductsOnSale = {
   id: number;
   product: IProduct;
   productId: number;
@@ -56,7 +56,7 @@ export type ProductsOnSale = {
   assignedAt: Date;
 }
 
-export type PaymentMethod = {
+export type IPaymentMethod = {
   id: number;
   name: string;
   sales: ISale[];
